@@ -30,6 +30,7 @@ return mockTickets;
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTickets() {
   return useContext(TicketContext);
 }

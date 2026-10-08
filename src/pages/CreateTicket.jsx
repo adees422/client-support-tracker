@@ -363,6 +363,12 @@ function CreateTicket() {
               <option value="Resolved">Resolved</option>
               <option value="Closed">Closed</option>
             </select>
+
+            {errors.status && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.status}
+              </p>
+            )}
           </div>
 
           {/* Assigned */}
