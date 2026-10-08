@@ -42,7 +42,7 @@ function CreateTicket() {
       title: "",
       description: "",
       priority: "",
-      status: "Open",
+      status: "",
       assignedTo: "",
       createdDate: getToday(),
       dueDate: "",
@@ -353,6 +353,7 @@ function CreateTicket() {
               onChange={handleChange}
               className="w-full px-4 py-3 border rounded-lg bg-white"
             >
+              <option value="">Select status</option>
               <option value="Open">Open</option>
               <option value="In Progress">
                 In Progress
