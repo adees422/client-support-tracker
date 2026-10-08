@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTickets } from "../context/TicketContext";
+import { isOverdue } from "../utils/ticketDates";
 
 function TicketList() {
   const { tickets } = useTickets();
@@ -13,20 +14,6 @@ function TicketList() {
   const [assignedFilter, setAssignedFilter] = useState("");
 
   const [sortBy, setSortBy] = useState("");
-
-  const isOverdue = (ticket) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const dueDate = new Date(ticket.dueDate);
-    dueDate.setHours(0, 0, 0, 0);
-
-    const isActive =
-      ticket.status !== "Resolved" &&
-      ticket.status !== "Closed";
-
-    return isActive && dueDate < today;
-  };
 
   const filteredTickets = tickets.filter((ticket) => {
     const searchText = search.toLowerCase();
