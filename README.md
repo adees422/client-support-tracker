@@ -63,6 +63,22 @@ The application helps support teams manage client tickets across three business 
 - Vite
 - Browser localStorage
 
+## Setup
+
+Prerequisites: Node.js and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite. To verify a production build or run the
+linter, use `npm run build` and `npm run lint`.
+
+## AI Tools
+
+- GitHub Copilot in VS Code
+
 ## Project Structure
 
 ```text
@@ -83,6 +99,8 @@ client-support-tracker/
 │   │   ├── TicketList.jsx
 │   │   ├── CreateTicket.jsx
 │   │   └── TicketDetail.jsx
+│   ├── utils/
+│   │   └── ticketDates.js
 │   │
 │   ├── App.jsx
 │   ├── index.css
