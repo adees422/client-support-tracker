@@ -2,24 +2,24 @@ import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <aside className="w-64 min-h-screen bg-slate-900 text-white p-5">
+    <aside className="w-full shrink-0 bg-slate-900 p-4 text-white md:min-h-screen md:w-64 md:p-5">
 
-      <h1 className="text-xl font-bold mb-8">
+      <h1 className="mb-3 text-xl font-bold md:mb-8">
         Client Support
       </h1>
 
-      <nav className="space-y-2">
+      <nav className="flex gap-2 md:block md:space-y-2">
 
         <Link
           to="/dashboard"
-          className="block w-full px-4 py-3 rounded-lg hover:bg-slate-800"
+          className="block rounded-lg px-3 py-2 text-sm hover:bg-slate-800 sm:px-4 sm:py-3 sm:text-base"
         >
           Dashboard
         </Link>
 
         <Link
           to="/tickets"
-          className="block w-full px-4 py-3 rounded-lg hover:bg-slate-800"
+          className="block rounded-lg px-3 py-2 text-sm hover:bg-slate-800 sm:px-4 sm:py-3 sm:text-base"
         >
           Tickets
         </Link>

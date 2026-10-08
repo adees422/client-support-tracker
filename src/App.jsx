@@ -13,19 +13,19 @@ import TicketDetail from "./pages/TicketDetail";
 function App() {
   return (
     <BrowserRouter>
-      <div className="flex min-h-screen bg-slate-100">
+      <div className="flex min-h-screen flex-col bg-slate-100 md:flex-row">
 
         <Sidebar />
 
-        <main className="flex-1">
+        <main className="min-w-0 flex-1">
 
-          <header className="bg-white border-b px-6 py-4">
+          <header className="border-b bg-white px-4 py-4 sm:px-6">
             <h2 className="text-xl font-semibold text-slate-800">
               Client Support Ticket Tracker
             </h2>
           </header>
 
-          <section className="p-6">
+          <section className="p-4 sm:p-6">
             <Routes>
 
               <Route
