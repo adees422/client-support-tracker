@@ -1,4 +1,5 @@
 import { useTickets } from "../context/TicketContext";
+import { isOverdue } from "../utils/ticketDates";
 
 import {
   BarChart,
@@ -28,22 +29,16 @@ function Dashboard() {
   const openTickets = activeTickets.length;
 
   // Overdue tickets
-  const today = new Date();
-
-  const overdueTickets = activeTickets.filter((ticket) => {
-    const dueDate = new Date(ticket.dueDate);
-
-    return dueDate < today;
-  });
+  const overdueTickets = activeTickets.filter(isOverdue);
 
   // Critical tickets
-  const criticalTickets = activeTickets
+  const criticalOpenTickets = activeTickets
     .filter((ticket) => ticket.priority === "Critical")
     .sort(
       (a, b) =>
         new Date(a.dueDate) - new Date(b.dueDate)
-    )
-    .slice(0, 5);
+    );
+  const criticalTickets = criticalOpenTickets.slice(0, 5);
 
   // Product line counts
   const productData = [
@@ -175,7 +170,7 @@ function Dashboard() {
           </p>
 
           <h2 className="text-3xl font-bold mt-2 text-orange-600">
-            {criticalTickets.length}
+            {criticalOpenTickets.length}
           </h2>
         </div>
 
